@@ -4,16 +4,15 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
-    inquirer
-    .prompt([
+    
     {
     type: 'input',
-    name: 'project title',
+    name: 'title',
     message: 'What is your project title',
     },
     {
     type: 'input',
-    name: 'description of project',
+    name: 'description',
     message: 'What is the description',
     },
     {
@@ -53,21 +52,26 @@ const questions = [
     },
     {
     type: 'input',
-    name: 'Email Address',
+    name: 'Email',
     message: 'What is your Email Adress',
-    },])
+    },
 ];
 
 // TODO: Create a function to write README file
 function WriteReadME(fileName, data) {
-    fs.WriteReadME(fileName, data, err => {
+    fs.writeFile(fileName, data, err => {
         if(err) throw new Error(err);
-        console.log("Read is Generated")
+        console.log("Readme is Generated")
     })
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(Response => {
+        WriteReadME('./dist/README.md', generateMarkdown(Response))
+        console.log(Response)
+    })
+};
 
 // Function call to initialize app
 init();
