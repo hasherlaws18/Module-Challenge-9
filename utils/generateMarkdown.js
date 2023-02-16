@@ -37,7 +37,7 @@ function generateMarkdown(data) {
  -[Questions](#Username)
  -[Questions](#Email)
  ## Project Description
- ${data.desctiption}
+ ${data.descrtiption}
  ## Installation
  ${data.Installation}
  ## Usage
