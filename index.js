@@ -23,7 +23,7 @@ const questions = [
     {
     type: 'input',
     name: 'usage',
-    message: 'What sort of usages will your project be used for',
+    message: 'What is being used to run your project',
     },
     {
     type: 'input',
@@ -33,7 +33,7 @@ const questions = [
     {
     type: 'input',
     name: 'Test',
-    message: 'What is your project title',
+    message: 'What is used to test your project ',
     },
     {
     type: 'list',
